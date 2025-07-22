@@ -57,14 +57,7 @@ npm run dev
 
 ## 🎬 Demo
 <div align="center">
-  <!-- Video preview for browsers (not supported on GitHub) -->
-  <video width="600" controls poster="./screenshot.png" style="border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,0.10);margin:24px 0;">
-    <source src="./pisethz-recording.webm" type="video/webm">
-    Your browser does not support the video tag. Here is a screenshot instead:<br/>
-    <img src="./screenshot.png" alt="Pisethz-corder Demo Screenshot" width="600" style="border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,0.10);margin:24px 0;" />
-  </video>
-  <br/>
-  <sub>Note: GitHub does not support video preview. To see the demo video, open this README locally or run the app.</sub>
+  <img src="./pisethz-recording.gif" alt="Pisethz-corder Demo" width="600" style="border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,0.10);margin:24px 0;" />
 </div>
 
 ## Getting Started
