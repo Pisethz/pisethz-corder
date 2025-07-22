@@ -12,7 +12,7 @@ Pisethz-corder is a modern, high-quality online screen recorder. It allows you t
   <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:8px;"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
   <h1>Pisethz-corder</h1>
   <p>
-    <b>A modern, high-quality online screen recorder</b><br>
+    <b>A modern, high-quality online screen recorder</b><br>v
     <i>Built with ReactJS, Vite, and Bootstrap</i>
   </p>
   <img src="./screenshot.png" alt="Pisethz-corder Screenshot" width="600" style="border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,0.15);margin:24px 0;" />
@@ -57,7 +57,14 @@ npm run dev
 
 ## 🎬 Demo
 <div align="center">
-  <img src="./pisethz-recording.webm" alt="Pisethz-corder Demo" width="600" style="border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,0.10);margin:24px 0;" />
+  <!-- Video preview for browsers (not supported on GitHub) -->
+  <video width="600" controls poster="./screenshot.png" style="border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,0.10);margin:24px 0;">
+    <source src="./pisethz-recording.webm" type="video/webm">
+    Your browser does not support the video tag. Here is a screenshot instead:<br/>
+    <img src="./screenshot.png" alt="Pisethz-corder Demo Screenshot" width="600" style="border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,0.10);margin:24px 0;" />
+  </video>
+  <br/>
+  <sub>Note: GitHub does not support video preview. To see the demo video, open this README locally or run the app.</sub>
 </div>
 
 ## Getting Started
