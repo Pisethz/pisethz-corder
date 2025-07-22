@@ -1,9 +1,2 @@
-# requirements.txt for Pisethz-corder (ReactJS/Vite project)
-# This file lists the main npm packages used for the modern UI and features.
-
-react
-react-dom
-vite
-bootstrap
-lucide-react
-animate.css
+# This project uses ReactJS and Vite, which require npm packages listed in package.json, not requirements.txt.
+# If you are not using Python, you can delete this file.
