@@ -8,7 +8,8 @@ Pisethz-corder is a modern, high-quality online screen recorder. It allows you t
 
 
 <div align="center">
-  <img src="https://lucide.dev/icon/monitor" alt="Pisethz-corder Logo" width="80" height="80" />
+  <!-- Monitor SVG icon -->
+  <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:8px;"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
   <h1>Pisethz-corder</h1>
   <p>
     <b>A modern, high-quality online screen recorder</b><br>
@@ -34,10 +35,14 @@ npm run dev
 ## ✨ Features
 
 <div align="center">
-  <img src="https://lucide.dev/icon/video" width="32" height="32" alt="Video Icon" />
-  <img src="https://lucide.dev/icon/monitor" width="32" height="32" alt="Monitor Icon" />
-  <img src="https://lucide.dev/icon/download" width="32" height="32" alt="Download Icon" />
-  <img src="https://lucide.dev/icon/sparkles" width="32" height="32" alt="Sparkles Icon" />
+  <!-- Video SVG icon -->
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f59e42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin:0 4px;"><rect x="2" y="7" width="15" height="10" rx="2"/><polygon points="17 7 22 12 17 17 17 7"/></svg>
+  <!-- Monitor SVG icon -->
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin:0 4px;"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+  <!-- Download SVG icon -->
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin:0 4px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+  <!-- Sparkles SVG icon -->
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f472b6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin:0 4px;"><path d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364-1.414 1.414M6.05 17.95l-1.414 1.414m12.728 0-1.414-1.414M6.05 6.05 4.636 4.636"/><circle cx="12" cy="12" r="4"/></svg>
 </div>
 
 - 🎥 Record your screen in 720p, 1080p, 2K, or 4K
@@ -52,7 +57,7 @@ npm run dev
 
 ## 🎬 Demo
 <div align="center">
-  <img src="./demo.gif" alt="Pisethz-corder Demo" width="600" style="border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,0.10);margin:24px 0;" />
+  <img src="./pisethz-recording.webm" alt="Pisethz-corder Demo" width="600" style="border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,0.10);margin:24px 0;" />
 </div>
 
 ## Getting Started
@@ -99,7 +104,8 @@ MIT
 ---
 
 <div align="center">
-  <img src="https://lucide.dev/icon/monitor" width="40" height="40" alt="Monitor Icon" />
+  <!-- Monitor SVG icon -->
+  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
   <br/>
   <b>Crafted with ❤️ for creators by Pisethz.</b>
 </div>
