@@ -80,6 +80,45 @@ function App() {
     return 'video/webm';
   };
 
+  // Try multiple APIs to acquire a screen stream across browsers
+  const acquireScreenStream = async (videoConstraints, wantAudio) => {
+    const devices = navigator.mediaDevices;
+    const baseAudio = wantAudio
+      ? {
+          echoCancellation: true,
+          noiseSuppression: true,
+          sampleRate: 48000
+        }
+      : false;
+
+    // 1) Standard
+    if (devices && typeof devices.getDisplayMedia === 'function') {
+      return await devices.getDisplayMedia({ video: videoConstraints, audio: baseAudio });
+    }
+    // 2) Legacy navigator.getDisplayMedia
+    if (typeof navigator.getDisplayMedia === 'function') {
+      return await navigator.getDisplayMedia({ video: videoConstraints, audio: baseAudio });
+    }
+    // 3) Firefox legacy fallback using mediaSource
+    if (devices && typeof devices.getUserMedia === 'function') {
+      const ffCandidates = [
+        { mediaSource: 'screen' },
+        { mediaSource: 'window' },
+        { mediaSource: 'application' }
+      ];
+      for (const cand of ffCandidates) {
+        try {
+          const vc = { ...videoConstraints, mediaSource: cand.mediaSource };
+          // Some engines expect the constraint nested under video
+          return await devices.getUserMedia({ video: vc, audio: baseAudio });
+        } catch (_) {
+          // try next candidate
+        }
+      }
+    }
+    throw new Error('Screen capture API is unavailable in this browser. Use a Chromium-based browser, Firefox, or Safari 16+ over HTTPS.');
+  };
+
   // Helpers
   const stopStream = (stream) => {
     try {
@@ -143,23 +182,10 @@ function App() {
 
       let screenStream;
       try {
-        screenStream = await navigator.mediaDevices.getDisplayMedia({
-          video: videoConstraints,
-          // Many mobile browsers do not allow system audio with display capture
-          audio: isMobile()
-            ? false
-            : {
-                echoCancellation: true,
-                noiseSuppression: true,
-                sampleRate: 48000
-              }
-        });
+        screenStream = await acquireScreenStream(videoConstraints, !isMobile());
       } catch (e) {
         // Retry without audio if the first attempt fails due to audio constraints
-        screenStream = await navigator.mediaDevices.getDisplayMedia({
-          video: videoConstraints,
-          audio: false
-        });
+        screenStream = await acquireScreenStream(videoConstraints, false);
       }
 
       // Prepare optional camera and microphone streams
