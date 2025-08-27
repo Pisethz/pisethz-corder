@@ -83,7 +83,10 @@ function App() {
   // Try multiple APIs to acquire a screen stream across browsers
   const acquireScreenStream = async (videoConstraints, wantAudio) => {
     const devices = navigator.mediaDevices;
-    const baseAudio = wantAudio
+    const isiOSSafari = isMobile() && isSafari();
+    // iOS Safari is very strict: video-only and minimal constraints
+    const iosVideo = true;
+    const baseAudio = wantAudio && !isiOSSafari
       ? {
           echoCancellation: true,
           noiseSuppression: true,
@@ -93,11 +96,11 @@ function App() {
 
     // 1) Standard
     if (devices && typeof devices.getDisplayMedia === 'function') {
-      return await devices.getDisplayMedia({ video: videoConstraints, audio: baseAudio });
+      return await devices.getDisplayMedia({ video: isiOSSafari ? iosVideo : videoConstraints, audio: baseAudio });
     }
     // 2) Legacy navigator.getDisplayMedia
     if (typeof navigator.getDisplayMedia === 'function') {
-      return await navigator.getDisplayMedia({ video: videoConstraints, audio: baseAudio });
+      return await navigator.getDisplayMedia({ video: isiOSSafari ? iosVideo : videoConstraints, audio: baseAudio });
     }
     // 3) Firefox legacy fallback using mediaSource
     if (devices && typeof devices.getUserMedia === 'function') {
